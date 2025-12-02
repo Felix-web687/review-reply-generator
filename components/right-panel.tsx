@@ -39,12 +39,12 @@ export function RightPanel({ responses, isLoading, showThinking, selectedPersona
   }
 
   return (
-    <div className="flex-1 overflow-y-auto bg-zinc-800 p-8">
+    <div className="flex-1 overflow-y-auto bg-zinc-950 p-8">
       <div className="max-w-3xl mx-auto">
         {/* Thinking Process */}
         {showThinking && (
           <div className="mb-8">
-            <div className="bg-zinc-900/80 rounded-xl border border-zinc-700 p-4">
+            <div className="bg-zinc-900 rounded-xl border border-zinc-800 p-4">
               <h3 className="text-sm font-semibold text-white mb-3">AI Thinking...</h3>
               <div className="space-y-2">
                 {THINKING_STEPS.map((step, idx) => {
@@ -123,11 +123,11 @@ export function RightPanel({ responses, isLoading, showThinking, selectedPersona
             {/* Response Options */}
             {responses.options &&
               responses.options.map((option: any, idx: number) => (
-                <Card key={idx} className="bg-zinc-900/80 border-zinc-700 hover:border-zinc-600 transition-all overflow-hidden hover:shadow-lg hover:shadow-purple-500/5">
-                  <CardHeader className="bg-gradient-to-r from-zinc-800/50 to-zinc-700/30 pb-3">
+                <Card key={idx} className="bg-zinc-900 border-zinc-800 hover:border-zinc-700 transition-all overflow-hidden hover:shadow-lg hover:shadow-purple-500/5">
+                  <CardHeader className="bg-gradient-to-r from-zinc-900 to-zinc-800/50 pb-3">
                     <div className="flex items-start justify-between mb-1">
                       <CardTitle className="text-base text-white">{option.title}</CardTitle>
-                      <span className="text-xs font-medium text-zinc-400 bg-zinc-700 px-2.5 py-1 rounded-full">
+                      <span className="text-xs font-medium text-zinc-400 bg-zinc-800 px-2.5 py-1 rounded-full">
                         Option {idx + 1}
                       </span>
                     </div>
@@ -141,7 +141,7 @@ export function RightPanel({ responses, isLoading, showThinking, selectedPersona
                       variant="outline"
                       size="sm"
                       onClick={() => handleCopy(option.content, idx)}
-                      className={`w-full text-xs font-medium border-zinc-600 hover:bg-zinc-700 hover:text-white transition-all ${
+                      className={`w-full text-xs font-medium border-zinc-700 hover:bg-zinc-800 hover:text-white transition-all ${
                         copiedIndex === idx ? "bg-green-500/20 border-green-500/50 text-green-400" : "text-zinc-300"
                       }`}
                     >

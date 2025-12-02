@@ -72,7 +72,7 @@ export function Dashboard() {
   }
 
   return (
-    <div className="h-screen w-full flex overflow-hidden bg-zinc-900">
+    <div className="h-screen w-full flex overflow-hidden bg-black">
       <LeftPanel
         storeData={storeData}
         setStoreData={setStoreData}
