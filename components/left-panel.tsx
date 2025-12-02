@@ -56,7 +56,7 @@ export function LeftPanel({
   }, [storeData])
 
   return (
-    <div className="w-[400px] flex-shrink-0 border-r border-zinc-800 bg-black p-6 flex flex-col overflow-y-auto">
+    <div className="w-[400px] flex-shrink-0 border-r border-zinc-700 bg-zinc-900 p-6 flex flex-col overflow-y-auto">
       {/* Header */}
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-2">
@@ -76,7 +76,7 @@ export function LeftPanel({
             placeholder="Your shop name..."
             value={storeData.storeName}
             onChange={(e) => setStoreData({ ...storeData, storeName: e.target.value })}
-            className="text-sm bg-zinc-900 border-zinc-700 text-white placeholder:text-zinc-500 focus:border-purple-500 focus:ring-purple-500/20"
+            className="text-sm bg-zinc-800 border-zinc-600 text-white placeholder:text-zinc-500 focus:border-purple-500 focus:ring-purple-500/20"
           />
           <p className="text-xs text-zinc-500 mt-1">Saved automatically to localStorage</p>
         </div>
@@ -87,17 +87,17 @@ export function LeftPanel({
             placeholder="e.g. handmade, organic, premium..."
             value={storeData.keywords}
             onChange={(e) => setStoreData({ ...storeData, keywords: e.target.value })}
-            className="text-sm bg-zinc-900 border-zinc-700 text-white placeholder:text-zinc-500 focus:border-purple-500 focus:ring-purple-500/20"
+            className="text-sm bg-zinc-800 border-zinc-600 text-white placeholder:text-zinc-500 focus:border-purple-500 focus:ring-purple-500/20"
           />
         </div>
 
         <div>
           <label className="block text-sm font-medium text-zinc-300 mb-1.5">Output Language</label>
           <Select value={storeData.language} onValueChange={(val) => setStoreData({ ...storeData, language: val })}>
-            <SelectTrigger className="text-sm bg-zinc-900 border-zinc-700 text-white">
+            <SelectTrigger className="text-sm bg-zinc-800 border-zinc-600 text-white">
               <SelectValue />
             </SelectTrigger>
-            <SelectContent className="bg-zinc-900 border-zinc-700">
+            <SelectContent className="bg-zinc-800 border-zinc-600">
               <SelectItem value="English US">English US</SelectItem>
               <SelectItem value="English UK">English UK</SelectItem>
               <SelectItem value="Spanish">Spanish</SelectItem>
@@ -117,7 +117,7 @@ export function LeftPanel({
             placeholder="Paste the review here... (supports copy-paste)"
             value={review}
             onChange={(e) => setReview(e.target.value)}
-            className="min-h-32 text-sm resize-none bg-zinc-900 border-zinc-700 text-white placeholder:text-zinc-500 focus:border-purple-500 focus:ring-purple-500/20"
+            className="min-h-32 text-sm resize-none bg-zinc-800 border-zinc-600 text-white placeholder:text-zinc-500 focus:border-purple-500 focus:ring-purple-500/20"
           />
           <p className="text-xs text-zinc-500 mt-1">Auto-cleans formatting and extra spaces</p>
         </div>
@@ -134,7 +134,7 @@ export function LeftPanel({
               className={`w-full text-left p-3 rounded-xl border transition-all ${
                 selectedPersona === persona.id
                   ? "border-purple-500 bg-purple-500/10 shadow-[0_0_15px_rgba(168,85,247,0.15)]"
-                  : "border-zinc-700 bg-zinc-900 hover:border-zinc-600 hover:bg-zinc-800"
+                  : "border-zinc-600 bg-zinc-800 hover:border-zinc-500 hover:bg-zinc-700"
               }`}
             >
               <div className="flex items-start gap-3">

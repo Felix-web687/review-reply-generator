@@ -5,24 +5,24 @@
 
 :root {
   /* Dark theme with pink-purple gradient accent */
-  --background: #000000;
+  --background: #18181b;
   --foreground: #ffffff;
-  --card: #0a0a0a;
+  --card: #1f1f23;
   --card-foreground: #ffffff;
-  --popover: #0a0a0a;
+  --popover: #1f1f23;
   --popover-foreground: #ffffff;
   --primary: #2563eb;
   --primary-foreground: #ffffff;
-  --secondary: #1a1a1a;
+  --secondary: #27272a;
   --secondary-foreground: #ffffff;
-  --muted: #1a1a1a;
+  --muted: #27272a;
   --muted-foreground: #a1a1aa;
   --accent: #e879f9;
   --accent-foreground: #ffffff;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  --border: #27272a;
-  --input: #1a1a1a;
+  --border: #3f3f46;
+  --input: #27272a;
   --ring: #e879f9;
   --chart-1: #e879f9;
   --chart-2: #a855f7;
@@ -30,35 +30,35 @@
   --chart-4: #2563eb;
   --chart-5: #06b6d4;
   --radius: 12px;
-  --sidebar: #0a0a0a;
+  --sidebar: #1f1f23;
   --sidebar-foreground: #ffffff;
   --sidebar-primary: #e879f9;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #1a1a1a;
+  --sidebar-accent: #27272a;
   --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #27272a;
+  --sidebar-border: #3f3f46;
   --sidebar-ring: #e879f9;
 }
 
 .dark {
-  --background: #000000;
+  --background: #18181b;
   --foreground: #ffffff;
-  --card: #0a0a0a;
+  --card: #1f1f23;
   --card-foreground: #ffffff;
-  --popover: #0a0a0a;
+  --popover: #1f1f23;
   --popover-foreground: #ffffff;
   --primary: #2563eb;
   --primary-foreground: #ffffff;
-  --secondary: #1a1a1a;
+  --secondary: #27272a;
   --secondary-foreground: #ffffff;
-  --muted: #1a1a1a;
+  --muted: #27272a;
   --muted-foreground: #a1a1aa;
   --accent: #e879f9;
   --accent-foreground: #ffffff;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  --border: #27272a;
-  --input: #1a1a1a;
+  --border: #3f3f46;
+  --input: #27272a;
   --ring: #e879f9;
   --chart-1: #e879f9;
   --chart-2: #a855f7;
@@ -159,7 +159,7 @@ html {
 /* Gradient border utility */
 .gradient-border {
   position: relative;
-  background: #0a0a0a;
+  background: #1f1f23;
 }
 
 .gradient-border::before {
