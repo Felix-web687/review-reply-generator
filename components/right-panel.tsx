@@ -6,13 +6,13 @@ import { Button } from "@/components/ui/button"
 import { AlertTriangle, Copy, CheckCircle2, Zap, Brain, Shield } from "lucide-react"
 
 const THINKING_STEPS = [
-  { icon: Brain, label: "Analyzing sentiment...", color: "text-blue-600" },
+  { icon: Brain, label: "Analyzing sentiment...", color: "text-pink-500" },
   {
     icon: Shield,
     label: "Checking platform policies...",
-    color: "text-green-600",
+    color: "text-purple-500",
   },
-  { icon: Zap, label: "Drafting response...", color: "text-yellow-600" },
+  { icon: Zap, label: "Drafting response...", color: "text-indigo-500" },
 ]
 
 export function RightPanel({ responses, isLoading, showThinking, selectedPersona, error }: any) {
@@ -39,13 +39,13 @@ export function RightPanel({ responses, isLoading, showThinking, selectedPersona
   }
 
   return (
-    <div className="flex-1 overflow-y-auto bg-gray-50 p-8">
+    <div className="flex-1 overflow-y-auto bg-zinc-950 p-8">
       <div className="max-w-3xl mx-auto">
         {/* Thinking Process */}
         {showThinking && (
           <div className="mb-8">
-            <div className="bg-white rounded-lg border border-gray-200 p-4">
-              <h3 className="text-sm font-semibold text-gray-900 mb-3">AI Thinking...</h3>
+            <div className="bg-zinc-900 rounded-xl border border-zinc-800 p-4">
+              <h3 className="text-sm font-semibold text-white mb-3">AI Thinking...</h3>
               <div className="space-y-2">
                 {THINKING_STEPS.map((step, idx) => {
                   const Icon = step.icon
@@ -58,7 +58,7 @@ export function RightPanel({ responses, isLoading, showThinking, selectedPersona
                       }`}
                     >
                       <Icon className={`w-4 h-4 ${step.color}`} />
-                      <span className="text-sm text-gray-600">{step.label}</span>
+                      <span className="text-sm text-zinc-300">{step.label}</span>
                     </div>
                   )
                 })}
@@ -70,13 +70,13 @@ export function RightPanel({ responses, isLoading, showThinking, selectedPersona
         {/* Error State */}
         {error && (
           <div className="mb-8">
-            <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+            <div className="bg-red-500/10 border border-red-500/30 rounded-xl p-4">
               <div className="flex gap-3">
-                <AlertTriangle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+                <AlertTriangle className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="text-sm font-semibold text-red-900 mb-1">Error</h4>
-                  <p className="text-sm text-red-800">{error}</p>
-                  <p className="text-xs text-red-700 mt-2">
+                  <h4 className="text-sm font-semibold text-red-400 mb-1">Error</h4>
+                  <p className="text-sm text-red-300">{error}</p>
+                  <p className="text-xs text-red-400/70 mt-2">
                     {error.includes("API key") && (
                       <>Please configure your DeepSeek API key in the .env.local file</>
                     )}
@@ -90,11 +90,11 @@ export function RightPanel({ responses, isLoading, showThinking, selectedPersona
         {/* Empty State */}
         {!responses && !isLoading && !error && (
           <div className="flex flex-col items-center justify-center py-16 text-center">
-            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-              <Zap className="w-8 h-8 text-blue-600" />
+            <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-500 flex items-center justify-center mb-6 shadow-lg shadow-purple-500/25">
+              <Zap className="w-10 h-10 text-white" />
             </div>
-            <h2 className="text-xl font-semibold text-gray-900 mb-2">Ready to draft replies?</h2>
-            <p className="text-gray-600 max-w-sm">
+            <h2 className="text-2xl font-bold text-white mb-3">Ready to draft replies?</h2>
+            <p className="text-zinc-400 max-w-sm leading-relaxed">
               Select a persona on the left, paste a review, and let AI help you craft human-like responses
             </p>
           </div>
@@ -105,12 +105,12 @@ export function RightPanel({ responses, isLoading, showThinking, selectedPersona
           <div className="space-y-4">
             {/* Warnings */}
             {responses.warnings && responses.warnings.length > 0 && (
-              <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3">
+              <div className="bg-amber-500/10 border border-amber-500/30 rounded-xl p-3">
                 <div className="flex gap-3">
-                  <AlertTriangle className="w-5 h-5 text-yellow-600 flex-shrink-0 mt-0.5" />
+                  <AlertTriangle className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-sm font-semibold text-yellow-900 mb-1">Policy Warning</h4>
-                    <ul className="text-sm text-yellow-800 space-y-1">
+                    <h4 className="text-sm font-semibold text-amber-400 mb-1">Policy Warning</h4>
+                    <ul className="text-sm text-amber-300/80 space-y-1">
                       {responses.warnings.map((warning: string, idx: number) => (
                         <li key={idx}>⚠️ {warning}</li>
                       ))}
@@ -123,25 +123,27 @@ export function RightPanel({ responses, isLoading, showThinking, selectedPersona
             {/* Response Options */}
             {responses.options &&
               responses.options.map((option: any, idx: number) => (
-                <Card key={idx} className="hover:shadow-md transition-shadow overflow-hidden">
-                  <CardHeader className="bg-gradient-to-r from-gray-50 to-white pb-3">
+                <Card key={idx} className="bg-zinc-900 border-zinc-800 hover:border-zinc-700 transition-all overflow-hidden hover:shadow-lg hover:shadow-purple-500/5">
+                  <CardHeader className="bg-gradient-to-r from-zinc-900 to-zinc-800/50 pb-3">
                     <div className="flex items-start justify-between mb-1">
-                      <CardTitle className="text-base text-gray-900">{option.title}</CardTitle>
-                      <span className="text-xs font-medium text-gray-500 bg-gray-100 px-2 py-1 rounded">
+                      <CardTitle className="text-base text-white">{option.title}</CardTitle>
+                      <span className="text-xs font-medium text-zinc-400 bg-zinc-800 px-2.5 py-1 rounded-full">
                         Option {idx + 1}
                       </span>
                     </div>
-                    <CardDescription className="text-xs">{option.description}</CardDescription>
+                    <CardDescription className="text-xs text-zinc-500">{option.description}</CardDescription>
                   </CardHeader>
 
                   <CardContent className="pt-4 pb-4">
-                    <p className="text-sm text-gray-700 leading-relaxed mb-4">{option.content}</p>
+                    <p className="text-sm text-zinc-300 leading-relaxed mb-4">{option.content}</p>
 
                     <Button
                       variant="outline"
                       size="sm"
                       onClick={() => handleCopy(option.content, idx)}
-                      className="w-full text-xs font-medium"
+                      className={`w-full text-xs font-medium border-zinc-700 hover:bg-zinc-800 hover:text-white transition-all ${
+                        copiedIndex === idx ? "bg-green-500/20 border-green-500/50 text-green-400" : "text-zinc-300"
+                      }`}
                     >
                       {copiedIndex === idx ? (
                         <>
@@ -161,7 +163,7 @@ export function RightPanel({ responses, isLoading, showThinking, selectedPersona
 
             {/* Regenerate Hint */}
             <div className="text-center pt-4">
-              <p className="text-xs text-gray-500">
+              <p className="text-xs text-zinc-500">
                 Modify your review and click "Draft Reply" again to get new options
               </p>
             </div>
