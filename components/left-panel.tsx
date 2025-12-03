@@ -56,48 +56,48 @@ export function LeftPanel({
   }, [storeData])
 
   return (
-    <div className="w-[400px] flex-shrink-0 border-r border-zinc-800 bg-black p-6 flex flex-col overflow-y-auto">
+    <div className="w-[400px] flex-shrink-0 border-r border-gray-200 bg-white p-6 flex flex-col overflow-y-auto">
       {/* Header */}
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-2">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-500 flex items-center justify-center">
-            <Sparkles className="w-4 h-4 text-white" />
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center shadow-lg">
+            <Sparkles className="w-5 h-5 text-white" />
           </div>
-          <h1 className="text-2xl font-bold text-white">Review<span className="gradient-text">Pilot</span></h1>
+          <h1 className="text-2xl font-bold text-gray-900">Review<span className="gradient-text">Pilot</span></h1>
         </div>
-        <p className="text-sm text-zinc-400">Navigate your reviews with AI</p>
+        <p className="text-sm text-gray-600">Navigate your reviews with AI</p>
       </div>
 
       {/* Store Configuration */}
       <div className="space-y-4 mb-8">
         <div>
-          <label className="block text-sm font-medium text-zinc-300 mb-1.5">Store Name</label>
+          <label className="block text-sm font-medium text-gray-700 mb-1.5">Store Name</label>
           <Input
             placeholder="Your shop name..."
             value={storeData.storeName}
             onChange={(e) => setStoreData({ ...storeData, storeName: e.target.value })}
-            className="text-sm bg-zinc-900 border-zinc-700 text-white placeholder:text-zinc-500 focus:border-purple-500 focus:ring-purple-500/20"
+            className="text-sm bg-white border-gray-300 text-gray-900 placeholder:text-gray-400 focus:border-orange-500 focus:ring-orange-500/20"
           />
-          <p className="text-xs text-zinc-500 mt-1">Saved automatically to localStorage</p>
+          <p className="text-xs text-gray-500 mt-1">Saved automatically to localStorage</p>
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-zinc-300 mb-1.5">Keywords (optional)</label>
+          <label className="block text-sm font-medium text-gray-700 mb-1.5">Keywords (optional)</label>
           <Input
             placeholder="e.g. handmade, organic, premium..."
             value={storeData.keywords}
             onChange={(e) => setStoreData({ ...storeData, keywords: e.target.value })}
-            className="text-sm bg-zinc-900 border-zinc-700 text-white placeholder:text-zinc-500 focus:border-purple-500 focus:ring-purple-500/20"
+            className="text-sm bg-white border-gray-300 text-gray-900 placeholder:text-gray-400 focus:border-orange-500 focus:ring-orange-500/20"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-zinc-300 mb-1.5">Output Language</label>
+          <label className="block text-sm font-medium text-gray-700 mb-1.5">Output Language</label>
           <Select value={storeData.language} onValueChange={(val) => setStoreData({ ...storeData, language: val })}>
-            <SelectTrigger className="text-sm bg-zinc-900 border-zinc-700 text-white">
+            <SelectTrigger className="text-sm bg-white border-gray-300 text-gray-900">
               <SelectValue />
             </SelectTrigger>
-            <SelectContent className="bg-zinc-900 border-zinc-700">
+            <SelectContent className="bg-white border-gray-200">
               <SelectItem value="English US">English US</SelectItem>
               <SelectItem value="English UK">English UK</SelectItem>
               <SelectItem value="Spanish">Spanish</SelectItem>
@@ -109,23 +109,23 @@ export function LeftPanel({
         </div>
       </div>
 
-      <div className="border-t border-zinc-800 pt-6 mb-8">
+      <div className="border-t border-gray-200 pt-6 mb-8">
         {/* Review Input */}
         <div className="mb-6">
-          <label className="block text-sm font-medium text-zinc-300 mb-1.5">Paste Customer Review</label>
+          <label className="block text-sm font-medium text-gray-700 mb-1.5">Paste Customer Review</label>
           <Textarea
             placeholder="Paste the review here... (supports copy-paste)"
             value={review}
             onChange={(e) => setReview(e.target.value)}
-            className="min-h-32 text-sm resize-none bg-zinc-900 border-zinc-700 text-white placeholder:text-zinc-500 focus:border-purple-500 focus:ring-purple-500/20"
+            className="min-h-32 text-sm resize-none bg-white border-gray-300 text-gray-900 placeholder:text-gray-400 focus:border-orange-500 focus:ring-orange-500/20"
           />
-          <p className="text-xs text-zinc-500 mt-1">Auto-cleans formatting and extra spaces</p>
+          <p className="text-xs text-gray-500 mt-1">Auto-cleans formatting and extra spaces</p>
         </div>
       </div>
 
       {/* Persona Selector */}
-      <div className="border-t border-zinc-800 pt-6 mb-8">
-        <label className="block text-sm font-semibold text-white mb-3">Choose Your Voice</label>
+      <div className="border-t border-gray-200 pt-6 mb-8">
+        <label className="block text-sm font-semibold text-gray-900 mb-3">Choose Your Voice</label>
         <div className="space-y-2">
           {PERSONAS.map((persona) => (
             <button
@@ -133,15 +133,15 @@ export function LeftPanel({
               onClick={() => setSelectedPersona(persona.id)}
               className={`w-full text-left p-3 rounded-xl border transition-all ${
                 selectedPersona === persona.id
-                  ? "border-purple-500 bg-purple-500/10 shadow-[0_0_15px_rgba(168,85,247,0.15)]"
-                  : "border-zinc-700 bg-zinc-900 hover:border-zinc-600 hover:bg-zinc-800"
+                  ? "border-orange-500 bg-orange-50 shadow-sm"
+                  : "border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50"
               }`}
             >
               <div className="flex items-start gap-3">
                 <span className="text-lg mt-0.5">{persona.icon}</span>
                 <div>
-                  <div className="text-sm font-medium text-white">{persona.name}</div>
-                  <div className="text-xs text-zinc-400">{persona.description}</div>
+                  <div className="text-sm font-medium text-gray-900">{persona.name}</div>
+                  <div className="text-xs text-gray-600">{persona.description}</div>
                 </div>
               </div>
             </button>
@@ -150,11 +150,11 @@ export function LeftPanel({
       </div>
 
       {/* Action Button */}
-      <div className="mt-auto pt-6 border-t border-zinc-800">
+      <div className="mt-auto pt-6 border-t border-gray-200">
         <Button
           onClick={onDraftReply}
           disabled={isLoading || !review.trim() || !storeData.storeName.trim()}
-          className="w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold py-3 rounded-full flex items-center justify-center gap-2 transition-all shadow-lg shadow-blue-600/25 hover:shadow-blue-500/40 disabled:opacity-50 disabled:shadow-none"
+          className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 rounded-full flex items-center justify-center gap-2 transition-all shadow-lg shadow-orange-500/25 hover:shadow-orange-600/40 disabled:opacity-50 disabled:shadow-none"
         >
           {isLoading ? (
             <>
@@ -168,7 +168,7 @@ export function LeftPanel({
             </>
           )}
         </Button>
-        <p className="text-xs text-zinc-500 mt-3 text-center">AI-powered with human touch</p>
+        <p className="text-xs text-gray-500 mt-3 text-center">AI-powered with human touch</p>
       </div>
     </div>
   )
